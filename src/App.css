@@ -1,0 +1,147 @@
+/* free Jeopardy fonts from OnlineWebFonts */
+@font-face {
+  font-family: "ITC Korinna";
+  src: url("//db.onlinewebfonts.com/t/b5e8cb4174e88052cc4a1ed674622313.eot");
+  src: url("//db.onlinewebfonts.com/t/b5e8cb4174e88052cc4a1ed674622313.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/b5e8cb4174e88052cc4a1ed674622313.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/b5e8cb4174e88052cc4a1ed674622313.woff") format("woff"), url("//db.onlinewebfonts.com/t/b5e8cb4174e88052cc4a1ed674622313.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/b5e8cb4174e88052cc4a1ed674622313.svg#ITC Korinna") format("svg");
+}
+@font-face {font-family: "Haettenschweiler"; src: url("//db.onlinewebfonts.com/t/37eedb1eea63022eb726513ad516cdb4.eot"); src: url("//db.onlinewebfonts.com/t/37eedb1eea63022eb726513ad516cdb4.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/37eedb1eea63022eb726513ad516cdb4.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/37eedb1eea63022eb726513ad516cdb4.woff") format("woff"), url("//db.onlinewebfonts.com/t/37eedb1eea63022eb726513ad516cdb4.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/37eedb1eea63022eb726513ad516cdb4.svg#Haettenschweiler") format("svg"); 
+}
+.App {
+  font-family: "ITC Korinna";
+  text-align: center;
+  height:100%;
+  text-shadow: 4px 4px #000000;
+  color: white;
+  font-size: calc(10px + 2vmin);
+}
+
+html,body,#root{
+  height:100%;/*not 100% sure why this was necessary*/
+  background-color: black;
+}
+
+.entry{
+  font-weight: 700;
+  padding: 1rem;
+  text-transform: Uppercase
+}
+
+.lg-entry{
+  font-size: 200%;
+  height: 100%;
+  width: 100%;
+}
+table{
+  height: 100%;
+  width: 100%;
+
+}
+
+.card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-raidius: .25rem;
+  transform-style: preserve-3d;
+  height: 80%;
+  width: 80%;
+  cursor:  pointer;
+  transition:  200ms;
+  transform: perspective(1000px) rotateY(var(--rotate-y,0));
+  left:5%;
+  top:5%;
+  background-color: mediumblue;
+}
+
+.card:hover{
+  box-shadow:  0 0 5px 2px rgba(256, 256, 256, .2);
+  
+}
+
+.card.flip{
+  background-color: #F0EAD6;
+  color: black;
+  text-shadow:  4px 3px rgba(0, 0, 0, .1);
+    --rotate-y: 180deg;
+}
+
+.card .front, .card .back{
+  position: absolute;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.card .back{
+	transform: rotateY(180deg);
+	width:90%;
+}
+.responses{
+	width:100%;
+	display:inline-flex;
+}
+.responses button{
+	width:50%;
+	margin: 1vw;
+	font-family:Haettenschweiler;
+	font-size:8vw;
+}
+div p{margin-top:60px;
+}
+.num{
+	font-family:Haettenschweiler;
+	color:yellow;
+	z-axis:10;
+	font-size:40pt;
+}
+#asking{
+	font-size:60%;
+	padding-top:10vw;
+	text-transform:none;
+}
+.multichoice{
+	font-size:75%;
+	padding-top:2vw;
+}
+#asking *{	
+  	box-shadow:  0 0 1px 1px rgba(0, 0, 0, .3);
+}
+.category{
+	
+	font-size:60%;
+	padding-bottom:6vw;
+}
+.options{
+	font-family:Helvetica;
+	display: inline-flex;
+	font-weight:900;
+	font-size:1.7vw;
+	float: right;
+	margin-top:50px;
+	padding-right:5%;
+	width:70%;
+}
+button{
+	background-color:#DDD5BB;
+}
+button:hover{
+	background-color:#F5F2E5;
+}
+.bottom-bar{
+	display: inline-flex;
+	width:90%;
+}
+.counter{
+	width:30%;
+	float:left;
+	display: inline-flex;
+	padding-left:5%;
+}
+.srcOpt{
+	display: inline;
+	padding-top:5%;
+	width:100%;
+}
+input[type="radio"]{
+	margin-left:5%;
+}
