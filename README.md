@@ -26,11 +26,11 @@ This app loads in three components from its standard, root App.js file:
 To avoid having to come up with a large pool of my own questions to test with, I based samples on a free list from trivia website QuizBreaker (https://www.quizbreaker.com/trivia-questions). 
 
 In the interest of scalability, I tailored my data standards for flashcards to be compatible with Open Trivia DB. (https://opentdb.com/)  The fields for Open TDb are as follows:
-	** category
-	** question
-	** correct_answer
-	** incorrect_answers: Array(String)
-	** difficulty: "easy","medium", or "hard"
+	- category
+	- question
+	- correct_answer
+	- incorrect_answers: Array(String)
+	- difficulty: "easy","medium", or "hard"
 
 The only two fields that aren't shared by the requirements were "difficulty" and "incorrect_answers."  Retaining the "difficulty" field for my own data was a no-brainer for the sake of the next step; the recognition of difficulty levels is essential to Jeopardy, as the lowest-value questions are supposed to be the easiest.
 
