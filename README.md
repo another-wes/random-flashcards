@@ -10,7 +10,7 @@ This app loads in three components from its standard, root App.js file:
 		* `unanswered`: an array tracking the indices of entries in `cards` that have already been asked.  This allows a new, non-repeat index to be randomly selected in constant time, instead of the time complexity growing.
 		* `deckMode`: an integer independently tracking the option selected in SourceOptions, so Game can fetch more questions independently when `unanswered` is empty.
 		* `selected`: an integer represented the position of the selection in the `cards` array.  Used to access the data each time Flashcard is rendered, and also to prune an option from `unanswered`.
-	  In addition to , also renders a message showing the current score.
+	  In addition to rendering Flashcards and SourceOptions, Game also renders a message showing the current score.
 	
 	- *Flashcard*: Shows, as specified, a category, a question and an answer.  The answer is on the back, alongside the "yes" and "no" buttons for the user.
 	  Performs most of the logic for formatting and rephrasing questions.
@@ -26,11 +26,11 @@ This app loads in three components from its standard, root App.js file:
 To avoid having to come up with a large pool of my own questions to test with, I based samples on a free list from trivia website QuizBreaker (https://www.quizbreaker.com/trivia-questions). 
 
 In the interest of scalability, I tailored my data standards for flashcards to be compatible with Open Trivia DB. (https://opentdb.com/)  The fields for Open TDb are as follows:
-	* category
-	* question
-	* correct_answer
-	* incorrect_answers: Array(String)
-	* difficulty: "easy","medium", or "hard"
+	** category
+	** question
+	** correct_answer
+	** incorrect_answers: Array(String)
+	** difficulty: "easy","medium", or "hard"
 
 The only two fields that aren't shared by the requirements were "difficulty" and "incorrect_answers."  Retaining the "difficulty" field for my own data was a no-brainer for the sake of the next step; the recognition of difficulty levels is essential to Jeopardy, as the lowest-value questions are supposed to be the easiest.
 
